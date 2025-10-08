@@ -9,5 +9,5 @@ class AdminRole extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['role_name', 'description', 'created_at'];
+    protected $fillable = ['role_name', 'description'];
 }
