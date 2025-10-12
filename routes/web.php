@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use Inertia\Inertia;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,13 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', [AuthController::class, 'login']);
-Route::get('/admin', [AdminController::class, 'index']);
+// Route::get('/admin', [AdminController::class, 'index']);
+
+
+Route::get('/admin', function(Event $event) {
+    return Inertia::render('Home', [
+        'event' => [
+            'test' => "123"
+        ]
+    ]);
+});
