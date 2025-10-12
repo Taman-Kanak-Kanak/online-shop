@@ -15,8 +15,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [AuthController::class, 'login']);
-// Route::get('/admin', [AdminController::class, 'index']);
+Route::group([], function() {
+    Route::get('/', [AuthController::class, 'login'])->name('login');
+    Route::get('/forgot', [AuthController::class, 'forgot'])->name('forgot');
+});
 
 
 Route::get('/admin', function(Event $event) {
