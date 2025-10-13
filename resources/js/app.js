@@ -120,7 +120,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 createInertiaApp({
   resolve: name => {
-    const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
+    const pages = import.meta.glob([
+            './Pages/**/*.vue',
+            './images/**'
+        ], 
+        {  eager: true }
+    )
+
     return pages[`./Pages/${name}.vue`]
   },
   setup({ el, App, props, plugin }) {
