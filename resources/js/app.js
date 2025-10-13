@@ -122,7 +122,7 @@ createInertiaApp({
   resolve: name => {
     const pages = import.meta.glob([
             './Pages/**/*.vue',
-            './images/**'
+            '../images/**'
         ], 
         {  eager: true }
     )
